@@ -1,0 +1,12 @@
+node_modules/
+dist/
+.tools/
+*.local
+.DS_Store
+Thumbs.db
+public/audio/besik-zhyry.wav
+public/audio/ATTRIBUTION.txt
+src/components/CountdownNew.tsx
+src/components/EventDetailsNew.tsx
+src/components/InvitationNew.tsx
+src/data/eventNew.ts
