@@ -5,7 +5,7 @@ export const event = {
   weekday: '\u0436\u0435\u043a\u0441\u0435\u043d\u0431\u0456',
   time: '13:00',
   venue: 'Brilliant \u043c\u0435\u0439\u0440\u0430\u043c\u0445\u0430\u043d\u0430\u0441\u044b',
-  address: '',
+  address: 'Түркістан қаласы',
   mapUrl: 'https://maps.google.com/?q=Brilliant+restaurant',
   hosts: {
     title: '\u0422\u043e\u0439 \u0438\u0435\u043b\u0435\u0440\u0456',

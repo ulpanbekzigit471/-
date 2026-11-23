@@ -1,9 +1,18 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Pause, Play } from 'lucide-react'
 
 export function MusicToggle() {
   const audioRef = useRef<HTMLAudioElement>(null)
   const [isPlaying, setIsPlaying] = useState(false)
+
+  useEffect(() => {
+    const audio = audioRef.current
+    if (!audio) return
+
+    // Try to start the music as soon as the page loads. Browsers may block
+    // audible autoplay until the visitor interacts with the page.
+    void audio.play().catch(() => setIsPlaying(false))
+  }, [])
 
   const toggleMusic = async () => {
     const audio = audioRef.current
@@ -25,7 +34,8 @@ export function MusicToggle() {
       ref={audioRef}
       src="/audio/toi-koriniz.mp3"
       loop
-      preload="none"
+      autoPlay
+      preload="auto"
       onPlay={() => setIsPlaying(true)}
       onPause={() => setIsPlaying(false)}
       onError={() => setIsPlaying(false)}
